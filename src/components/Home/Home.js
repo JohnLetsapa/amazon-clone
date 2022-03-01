@@ -18,27 +18,30 @@ const Home = () => {
             <div className="home__row">
                 <Product 
                         key={1}
+                        id="111"
                         title="The Lean Start-up: How constant innovation Creates Radically Successful Businesses paperback  "
                         image="https://images-na.ssl-images-amazon.com/images/I/51Zymoq7UnL._AC_SY400_.jpg"  
-                        price="9.99"
+                        price={9.99}
                         rating={4}
                 />
             
             
                 <Product 
                         key={2}
+                        id="222"
                         title="The Lean Start-up: How constant innovation Creates Radically Successful Businesses paperback  "
                         image="https://images-na.ssl-images-amazon.com/images/I/51Zymoq7UnL._AC_SY400_.jpg"  
-                        price="9.99"
+                        price={9.99}
                         rating={5}
                 />
                
 
                 <Product 
                         key={3}
+                        id="333"
                         title="The Lean Start-up: How constant innovation Creates Radically Successful Businesses paperback  "
                         image="https://images-na.ssl-images-amazon.com/images/I/51Zymoq7UnL._AC_SY400_.jpg"  
-                        price="9.99"
+                        price={9.99}
                         rating={3}
                 />
              

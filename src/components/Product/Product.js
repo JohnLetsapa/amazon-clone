@@ -2,13 +2,14 @@ import React from 'react'
 import './Product.css'
 import { useStateValue } from '../StateContext'
 
-const Product = ({id, title, image, price, rating}) => {
+const Product = ({key, id, title, image, price, rating}) => {
     const [state, dispatch] = useStateValue()
    
     const addToBasket = () => {
         dispatch({
             type: 'ADD_TO_BASKET',
             item: {
+                key,
                 id,
                 title,
                 image,
