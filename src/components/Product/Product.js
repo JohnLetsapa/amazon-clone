@@ -1,30 +1,43 @@
 import React from 'react'
 import './Product.css'
+import { useStateValue } from '../StateContext'
 
-const Product = () => {
+const Product = ({id, title, image, price, rating}) => {
+    const [state, dispatch] = useStateValue()
+   
+    const addToBasket = () => {
+        dispatch({
+            type: 'ADD_TO_BASKET',
+            item: {
+                id,
+                title,
+                image,
+                price,
+                rating
+            }
+        })
+    }
+
   return (
     <div className="product">
         <div className="product__info">
-            <p className="">
-                The Lean Start-up: How constant innovation Creates Radically Successful Businesses paperback 
+            <p className="product__description">
+                {title}
             </p>
-            <p className="product__description"></p>
+    
             <p className="product__price">
                 <small>$</small>
-                <strong>9.99</strong>
+                <strong>{price}</strong>
             </p>
             <div className="product__rating">
-                <p><span alt="">🌟</span></p>
-                <p><span alt="">🌟</span></p>
-                <p><span alt="">🌟</span></p>
-            
+                { Array(rating).fill().map((_, i) => (<p><span role="img">🌟</span></p>)) }
             </div>
             <img
                 className="product__image" 
-                src="https://images-na.ssl-images-amazon.com/images/I/51Zymoq7UnL._AC_SY400_.jpg" 
+                src={image}
                 alt=""
-                /> <br/>
-            <button className="" >Add to basket</button>
+                />
+            <button onClick={addToBasket} >Add to basket</button>
         </div>
 
     </div>
