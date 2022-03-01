@@ -7,7 +7,8 @@ import {useStateValue} from '../StateContext'
 
 
 const Header = () => {
-const [{basket}, dispatch] = useStateValue()
+const [{basket, user}, dispatch] = useStateValue()
+
 
   return (
     <div className="header">
@@ -34,8 +35,8 @@ const [{basket}, dispatch] = useStateValue()
             <div className="header_nav">
                 <Link to="login">
                 <div className="header__option">
-                    <span className="header__optionLineOne">Hello Guest</span>
-                    <span className="header__optionLineTwo">Sign In</span>
+                    <span className="header__optionLineOne">{user?.email}</span>
+                    <span className="header__optionLineTwo">{user  ? "Sign out" : "Sign In" }</span>
                 </div>
                 </Link>
                 <div className="header__option">
@@ -50,7 +51,7 @@ const [{basket}, dispatch] = useStateValue()
                 <Link to='checkout'>
                 <div className="header__optionBasket">
                     <ShoppingBasket />
-                    <span className="header__optionLineTwo header__basketCount">{basket?.length}</span>
+                    <span className="header__optionLineTwo header__basketCount">{ basket?.length }</span>
                 </div>
                 </Link>
             </div>
