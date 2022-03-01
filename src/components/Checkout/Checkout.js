@@ -6,7 +6,7 @@ import { useStateValue } from '../StateContext'
 
 
 const Checkout = () => {
-const [{basket}, dispatch] = useStateValue()
+const [{basket, user}, dispatch] = useStateValue()
   return (
     <div className="checkout">
         <div className="checkout__left">
@@ -17,7 +17,7 @@ const [{basket}, dispatch] = useStateValue()
 
             <div>
                 <h2 className="checkout__title">
-                    Your shopping basket
+                    {user?.email} : your shopping basket
                 </h2>
 
                 {basket.map(item => (

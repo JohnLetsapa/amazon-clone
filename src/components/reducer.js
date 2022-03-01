@@ -5,7 +5,6 @@ export const initialState = {
 
 export const getBasketTotal = (basket) => basket?.reduce((totalAmount, item) => item.price + totalAmount, 0)
 
-
 const reducer = (state, action) => {
         switch (action.type) {
             case "ADD_TO_BASKET":
@@ -28,7 +27,7 @@ const reducer = (state, action) => {
             return {
                     ...state,
                     basket: newBasket  
-            }
+                }
             
             case "SET_USER":
                 return { ...state,
@@ -39,12 +38,13 @@ const reducer = (state, action) => {
                 return { ...state,
                         user: ''           //this is the dispatched user from the APP Component
                 }
-
+            
 
         default:
-            return state
-            
+            return state 
         }
     }
+
+    
 
 export default reducer

@@ -6,7 +6,6 @@ import Home from './components/Home/Home'
 import Checkout from './components/Checkout/Checkout'
 import Login from './components/Login/Login'
 import firebase from 'firebase/compat/app'
-// import 'firebase/compat/auth';
 import { auth } from './components/Firebase'
 import { useStateValue } from './components/StateContext' 
 
@@ -17,8 +16,8 @@ function App() {
   useEffect(() => { 
 
     firebase.auth().onAuthStateChanged((authUser) => {
-      console.log('The user email is : ', authUser.email)
-      if (user) {
+    
+      if (authUser) {
         // https://firebase.google.com/docs/reference/js/firebase.User
         dispatch({
             type: 'SET_USER',
@@ -26,9 +25,9 @@ function App() {
         })
         
       } else {
-        
+
         dispatch({
-            type: 'RESET_USER',
+            type: 'SET_USER',
             user: null
         })
       }
