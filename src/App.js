@@ -9,6 +9,13 @@ import Payment from './components/Payment/Payment'
 import firebase from 'firebase/compat/app'
 import { auth } from './components/Firebase'
 import { useStateValue } from './components/StateContext' 
+import { loadStripe } from '@stripe/stripe-js'
+import { Elements } from '@stripe/react-stripe-js'
+
+const promise = loadStripe('pk_test_51KYpHYL32hkfC7h7U8E9wUiPZyCbD7MTUZjFiezQYkEpEkhlbU0x0yNllF7d0RlL8FQ0BYxg1jCR2oZ0zcFLJUOf00tLkJAT8t')
+
+
+
 
 
 function App() {
@@ -38,6 +45,7 @@ function App() {
 
   const home = <div><Header/><Home/></div>
   const checkout = <div><Header/><Checkout/></div>
+  const payment = <Elements stripe={promise} ><Payment /></Elements>
 
   return (
 
@@ -46,7 +54,7 @@ function App() {
             <Route path='login' element={<Login />} />
             <Route path='/' element={home}  />
             <Route path='checkout' element={checkout} />
-            <Route path='payment' element= {<Payment />} />
+            <Route path='payment' element= {payment} />
         </Routes>
       </div>
   

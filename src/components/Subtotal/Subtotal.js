@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom'
 
 const Subtotal = () => {
   const navigate = useNavigate() 
-  const [{basket}, dispatch] = useStateValue()
+  const [{basket}] = useStateValue()
 
   const proceedToCheckout = () => {
     navigate('/payment')
