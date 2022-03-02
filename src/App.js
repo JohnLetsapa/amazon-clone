@@ -5,6 +5,7 @@ import Header from './components/Header/Header'
 import Home from './components/Home/Home'
 import Checkout from './components/Checkout/Checkout'
 import Login from './components/Login/Login'
+import Payment from './components/Payment/Payment'
 import firebase from 'firebase/compat/app'
 import { auth } from './components/Firebase'
 import { useStateValue } from './components/StateContext' 
@@ -45,6 +46,7 @@ function App() {
             <Route path='login' element={<Login />} />
             <Route path='/' element={home}  />
             <Route path='checkout' element={checkout} />
+            <Route path='payment' element= {<Payment />} />
         </Routes>
       </div>
   

@@ -17,7 +17,7 @@ const [{basket, user}, dispatch] = useStateValue()
 
             <div>
                 <h2 className="checkout__title">
-                    {user?.email} : your shopping basket
+                    {user ? user?.email + ": your shopping basket" : "Your shopping basket" }
                 </h2>
 
                 {basket.map(item => (
