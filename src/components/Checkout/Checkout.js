@@ -22,6 +22,7 @@ const [{basket, user}, dispatch] = useStateValue()
 
                 {basket.map(item => (
                     <CheckoutProduct 
+                            key={item.key}
                             id={item.id}
                             title={item.title}
                             image={item.image}
